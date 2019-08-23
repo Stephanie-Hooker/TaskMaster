@@ -1,17 +1,44 @@
-import List from "../models/List.js";
+import List from "../Models/List.js";
 
 //Private
 let _state = {
-    lists: []
+    lists: [new List({
+        title: "Make todo list",
+        todo: ["clean house", "pay bills"]
+
+    })]
 }
 
 
 //Public
 export default class ValuesService {
+    deletetodo(listIndex, todoIndex) {
+        _state.lists[listIndex].todo.splice(todoIndex, 1)
+        this.saveLists()
+    }
+    addTodo(newTodo, listIndex) {
+        _state.lists[listIndex].todo.push(newTodo)
+        this.saveLists()
+    }
+    deleteList(index) {
+        _state.lists.splice(index, 1)
+        this.saveLists()
+    }
+    addList(newList) {
+        _state.lists.push(new List(newList))
+        this.saveLists()
+    }
     //TODO  Here is where we handle all of our data manipulation, 
     //given the information you need in the controller, 
     //what methods will be required to support that functionality?
 
+    constructor() {
+        this.getLists()
+    }
+
+    get List() {
+        return _state.lists.map(list => new List(list))
+    }
 
 
 
