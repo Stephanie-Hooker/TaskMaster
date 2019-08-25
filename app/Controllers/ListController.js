@@ -36,8 +36,22 @@ export default class ListController {
         _drawLists()
     }
     deleteList(index) {
-        _listService.deleteList(index)
-        _drawLists()
+        swal({
+            title: "Are you sure you want to delete?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    _listService.deleteList(index)
+                    _drawLists()
+                }
+                else {
+                    _drawLists();
+                }
+            });
+
     }
 
 
@@ -50,8 +64,21 @@ export default class ListController {
     }
 
     deleteTodo(listIndex, todoIndex) {
-        _listService.deletetodo(listIndex, todoIndex)
-        _drawLists()
+        swal({
+            title: "Are you sure you want to delete?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    _listService.deleteTodo(listIndex, todoIndex)
+                    _drawLists()
+                }
+                else {
+                    _drawLists();
+                }
+            });
     }
 
 

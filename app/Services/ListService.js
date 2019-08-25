@@ -12,7 +12,7 @@ let _state = {
 
 //Public
 export default class ValuesService {
-    deletetodo(listIndex, todoIndex) {
+    deleteTodo(listIndex, todoIndex) {
         _state.lists[listIndex].todo.splice(todoIndex, 1)
         this.saveLists()
     }

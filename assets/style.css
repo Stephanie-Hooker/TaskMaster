@@ -1,8 +1,50 @@
+
+body {
+  background-image: url("https://www.stockvault.net/data/2011/02/19/117711/preview16.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#task {
+  font-size: 50px;
+}
+.title {
+  font-size: 35px;
+}
 .delete {
   color: red;
+  border: solid black 1px;
+}
+.x {
+  margin-left: 10px;
+  border: solid black 1px;
 }
 .add {
   color: green;
+  border: solid black 1px;
+}
+.header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  }
+
+.polaroid {
+  width: 284px;
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #BFBFBF;
+  background-color: #faf7a5;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  margin: 30px;
 }
 
-
+.rotate-left {
+  float: left;
+  -ms-transform: rotate(-8deg); /* IE 9 */
+  -webkit-transform: rotate(-8deg); /* Safari */
+  transform: rotate(-8deg);
+}
+.icon-pushpin {
+  color: red;
+  text-align: center;
+  display: block;
+}
